@@ -15,13 +15,13 @@ app.use(loggerMiddleware);
 app.get('/users', userController.getUsers);
 app.get('/profile', authorizeMiddleware('admin'), userController.getProfile);
 app.get('/admin', authMiddleware, (req, res, next) => {
-    // do something
+  // do something
 });
 
 const server = http.createServer((req, res) => {
-    app.handle(req, res);
+  app.handle(req, res);
 });
 
 server.listen(PORT, () => {
-    console.log(`Server Is Runnnig Address: http://localhost:${PORT} 🚀`);
+  console.log(`Server Is Runnnig Address: http://localhost:${PORT} 🚀`);
 });
